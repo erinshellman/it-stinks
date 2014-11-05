@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='styles.css')}}">
+{% endblock %}
+
+{% block navbar %}
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">How does it work?</a></li>
+  <li><a href="#">About.</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+<div class="page-header">
+  <h1>Does it Stink? <small>An app inspired by Jay Sherman.</small></h1>
+</div>
+
+<div>
+<p>
+  This is an educational app built by 
+  <a href="http://erinshellman.com/">Erin Shellman</a> to demonstrate the use
+  of the Twitter API to build fun stuff for the internets.
+</p>
+    
+<p>
+  <em>It Stinks!</em> was inspired by <a href="http://sucks-rocks.com/">sucks/rocks</a>, 
+  an app created by <a href="http://brianbeck.com/">Brian Beck</a> and 
+  <a href="https://www.destroyallsoftware.com/">Gary Bernhardt</a> that keeps 
+  you well informed on things that either suck or rock.
+</p>
+</div>
+
+</div>
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+{{ fixes.ie8() }}
+{% endblock %}
+

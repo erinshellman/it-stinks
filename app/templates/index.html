@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='styles.css')}}">
+{% endblock %}
+
+{% block navbar %}
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">How does it work?</a></li>
+  <li><a href={{ url_for('about') }}>About.</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+<div class="page-header">
+  <h1>Does it Stink? <small>An app inspired by Jay Sherman.</small></h1>
+</div>
+
+<div class="alert alert-danger">{{ sentiment }}</div>
+
+<form action="." method="POST">
+<div class="input-group input-group-lg">
+    <span class="input-group-addon">@</span>
+    <input type="text" name="text" class="form-control" placeholder="#transformersmovie">
+</div>
+</form>
+
+  {% for tweet in tweets %}
+  <li class="list-group-item"> {{ tweet }} </li>
+  {% endfor %}
+
+</div>
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+{{ fixes.ie8() }}
+{% endblock %}

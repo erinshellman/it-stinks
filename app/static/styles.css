@@ -1,0 +1,7 @@
+body {
+  background-image: url('cropped_jay.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% -110%;
+  background-size: 45%;
+  background-attachment: fixed;
+}

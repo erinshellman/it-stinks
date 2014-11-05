@@ -1,0 +1,8 @@
+pyyaml
+twitter
+ipdb
+nltk
+Flask
+flask-bootstrap
+Jinja2
+Werkzeug
